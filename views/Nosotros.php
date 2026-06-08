@@ -86,8 +86,86 @@
 
 
         <!-- PANEL ADMINISTRADOR -->
-        <h3>Panel Administrador</h3>
-        <p>Puede administrar los productos desde el menú Productos.</p>
+        <?php
+            $productos = ProductoController::listar();
+        ?>
+
+        <h3 class="mb-4">
+            Panel Administrador
+        </h3>
+
+        <p class="text-muted">
+            Resumen de productos registrados en el sistema.
+        </p>
+
+        <div class="card shadow">
+
+            <div class="card-header bg-dark text-white">
+                Lista de Productos
+            </div>
+
+            <div class="card-body">
+
+                <div class="table-responsive">
+
+                    <table class="table table-bordered table-hover align-middle">
+
+                        <thead class="table-danger">
+
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Precio</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <?php foreach($productos as $p){ ?>
+
+                            <tr>
+
+                                <td>
+
+                                    <img
+                                        src="<?php echo $p['ima_pro']; ?>"
+                                        width="80"
+                                        height="80"
+                                        class="rounded producto-admin-img">
+
+                                </td>
+
+                                <td>
+                                    <?php echo $p['nom_pro']; ?>
+                                </td>
+
+                                <td>
+                                    <?php echo $p['des_pro']; ?>
+                                </td>
+
+                                <td>
+
+                                    <span class="badge bg-success fs-6">
+                                        $<?php echo number_format($p['pre_pro'],2); ?>
+                                    </span>
+
+                                </td>
+
+                            </tr>
+
+                            <?php } ?>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
 
     <?php } else { ?>
 
@@ -175,7 +253,7 @@
 
                 <?php $total = 0; ?>
 
-                <div class="card shadow factura-fija">
+                <div class="card shadow factura-fija" id="facturaImprimir">
 
                     <div class="card-header bg-success text-white">
                         Factura
@@ -206,7 +284,7 @@
                                     <th>Producto</th>
                                     <th>Cantidad</th>
                                     <th>Subtotal</th>
-                                    <th>Acción</th>
+                                    <th class="col-accion">Acción</th>
                                 </tr>
 
                             </thead>
@@ -233,7 +311,7 @@
                                         $<?php echo number_format($item["subtotal"],2); ?>
                                     </td>
 
-                                    <td>
+                                    <td  class="col-accion">
 
                                         <a href="index.php?option=Nosotros&eliminar=<?php echo $indice; ?>" class="btn btn-danger btn-sm"
                                             onclick="return eliminarProducto();">
@@ -250,27 +328,17 @@
                                 }
                                 ?>
 
-                                <tr>
-
-                                    <td colspan="4">
-                                        <strong>Total</strong>
-                                    </td>
-
-                                    <td>
-                                        <strong>
-                                            $<?php echo number_format($total,2); ?>
-                                        </strong>
-                                    </td>
-
+                                <tr class="total-factura">
+                                    <td colspan="4">TOTAL</td>
+                                    <td>$<?php echo number_format($total,2); ?></td>
                                 </tr>
 
                             </tbody>
 
                         </table>
 
-                        <div class="d-flex gap-2">
-                            <button
-                                type="button"
+                        <div class="d-flex gap-2 mt-3">
+                            <button type="button"
                                 class="btn btn-secondary"
                                 onclick="window.print()">
 
