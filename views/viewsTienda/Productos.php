@@ -19,17 +19,38 @@ if(isset($_GET["editar"])){
     <!-- FORMULARIO -->
     <div class="card shadow mb-4">
 
-        <div class="card-header bg-danger text-white">
+        <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center">
 
-            <?php if($editar != null){ ?>
-                Editar Producto
-            <?php }else{ ?>
-                Nuevo Producto
+            <span>
+                <?php if($editar != null){ ?>
+                    Editar Producto
+                <?php }else{ ?>
+                    Gestión de Productos
+                <?php } ?>
+            </span>
+
+            <?php if($editar == null){ ?>
+
+            <button
+                class="btn btn-light btn-sm"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#formProducto">
+
+                + Nuevo Producto
+
+            </button>
+
             <?php } ?>
 
         </div>
 
+        <div
+            id="formProducto"
+            class="collapse <?php echo ($editar != null) ? 'show' : ''; ?>">
+
         <div class="card-body">
+
 
             <form method="post">
 
