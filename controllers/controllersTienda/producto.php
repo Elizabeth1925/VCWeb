@@ -14,6 +14,8 @@ class ProductoController{
         && !isset($_POST["editarProducto"])
     ){
 
+
+    
         $datos = array(
             "nombre"=>$_POST["nombre"],
             "descripcion"=>$_POST["descripcion"],
