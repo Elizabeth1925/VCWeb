@@ -1,3 +1,6 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
 *{
     margin:0;
     padding:0;
@@ -5,33 +8,36 @@
 }
 
 body{
-    background:rgb(238,238,238);
-    font-family:'Times New Roman';
+    background:#ffffff;
+    font-family:Georgia, serif;
+    color:#333;
+    line-height:1.5;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 header img{
     width:100%;
-    height:160px; /* antes estaba muy grande */
+    height:180px;
     object-fit:cover;
     display:block;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
 }
 
-/* MENÚ */
+/* =========================
+   MENÚ
+========================= */
 nav{
-    width:100%;
     background:rgb(141,14,14);
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
 }
 
 nav ul{
     list-style:none;
-
     display:flex;
     justify-content:center;
-}
-
-nav ul li{
-    display:flex;
+    flex-wrap:wrap;
 }
 
 nav ul li a{
@@ -40,106 +46,294 @@ nav ul li a{
     justify-content:center;
 
     width:180px;
-    height:40px;
-
-    background:rgb(141,14,14);
+    height:50px;
 
     color:white !important;
     text-decoration:none !important;
 
-    font-size:20px;
-    font-weight:bold;
+    font-weight:600;
+    font-size:17px;
 
-    transition:0.3s;
+    transition:.3s;
 }
 
 nav ul li a:hover{
     background:rgb(110,0,0);
 }
 
-/* CONTENIDO */
+/* =========================
+   CONTENIDO
+========================= */
 article{
-    padding:20px;
-    min-height:500px;
+    padding:25px;
+    min-height:600px;
 }
 
-/* PIE DE PÁGINA */
+/* =========================
+   TITULOS
+========================= */
+h2{
+    text-align:center;
+    font-weight:700;
+    margin-bottom:25px;
+    color:#222;
+}
+
+h3{
+    color:#444;
+    margin-bottom:15px;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+.card{
+    border:none !important;
+    border-radius:12px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+}
+
+.card-header{
+    font-weight:bold;
+    font-size:18px;
+}
+
+/* =========================
+   PRODUCTOS CLIENTE
+========================= */
+.card-img-top{
+    height:220px;
+    object-fit:cover;
+}
+
+.card-title{
+    font-size:18px;
+    font-weight:700;
+}
+
+.card-text{
+    min-height:60px;
+    color:#666;
+}
+
+.text-success{
+    font-weight:bold;
+}
+
+/* =========================
+   FACTURA
+========================= */
+.factura-fija{
+    position:sticky;
+    top:15px;
+    z-index:100;
+}
+
+.factura-fija .card-body{
+    max-height:650px;
+    overflow-y:auto;
+}
+
+.factura-fija table{
+    font-size:14px;
+}
+
+.factura-fija::-webkit-scrollbar{
+    width:6px;
+}
+
+.factura-fija::-webkit-scrollbar-thumb{
+    background:#ccc;
+    border-radius:10px;
+}
+
+.total-factura{
+    background:#198754;
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+}
+
+/* =========================
+   TABLAS
+========================= */
+.table{
+    margin-bottom:0;
+}
+
+.table thead th{
+    background:rgb(141,14,14) !important;
+    color:white !important;
+    border:none;
+}
+
+.table-hover tbody tr:hover{
+    background:#f8f9fa;
+}
+
+.table td{
+    vertical-align:middle;
+}
+
+/* =========================
+   CRUD ADMIN
+========================= */
+.producto-admin-img{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.producto-admin-img:hover{
+    transform:scale(1.2);
+}
+
+.badge{
+    font-size:15px;
+    padding:8px 12px;
+}
+
+/* =========================
+   BOTONES
+========================= */
+.btn{
+    border-radius:8px;
+    font-weight:600;
+}
+
+.btn-success{
+    background:#198754;
+}
+
+.btn-primary{
+    background:#0d6efd;
+}
+
+.btn-warning{
+    color:black;
+}
+
+.btn-danger{
+    background:rgb(141,14,14) !important;
+    border-color:rgb(141,14,14) !important;
+}
+
+.btn-danger:hover{
+    background:rgb(110,0,0) !important;
+    border-color:rgb(110,0,0) !important;
+}
+
+/* =========================
+   FORMULARIOS
+========================= */
+.form-control{
+    border-radius:8px;
+}
+
+.form-control:focus{
+    box-shadow:0 0 0 .15rem rgba(141,14,14,.25);
+    border-color:rgb(141,14,14);
+}
+
+/* =========================
+   ALERTAS
+========================= */
+.alert{
+    border:none;
+    border-radius:10px;
+    font-weight:600;
+}
+
+/*==========================
+  Contactanos
+===========================*/
+.card img{
+    object-fit:cover;
+    border:4px solid rgb(141,14,14);
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    transition:.3s;
+}
+
+.card h5{
+    font-weight:bold;
+    color:rgb(141,14,14);
+}
+
+/* =========================
+   FOOTER
+========================= */
 footer{
     background:rgb(141,14,14);
     color:white;
     text-align:center;
     padding:20px;
-    margin-top:20px;
-    font-size:16px;
-}
-
-/* TABLA */
-.datagrid-header .datagrid-cell{
-    text-align:center !important;
-    font-weight:bold;
+    margin-top:30px;
     font-size:15px;
 }
 
-.datagrid-row .datagrid-cell{
-    text-align:left !important;
-    font-size:14px;
+/* =========================
+   IMPRESIÓN DE FACTURA
+========================= */
+@media print{
+
+    body *{
+        visibility:hidden;
+    }
+
+    #facturaImprimir,
+    #facturaImprimir *{
+        visibility:visible;
+    }
+
+    #facturaImprimir{
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        background:white;
+    }
+
+    .btn,
+    nav,
+    footer,
+    header{
+        display:none !important;
+    }
+
+    .col-accion,
+    .btn{
+        display:none !important;
+    }
 }
 
-/* TOOLBAR */
-#toolbar{
-    padding:15px;
-    background:white;
-    border-radius:8px;
-    margin-bottom:10px;
-}
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:768px){
 
-/* TÍTULO */
-h2{
-    text-align:center;
-    margin:20px 0;
-    color:rgb(0, 0, 0);
-    font-size:30px;
-}
+    nav ul{
+        flex-direction:column;
+    }
 
+    nav ul li a{
+        width:100%;
+    }
 
-.factura-fija{
-    position: sticky;
-    top: 15px;
-    z-index: 100;
-}
-
-.card-img-top{
-    object-fit: cover;
-}
-
-.factura-fija .card-body{
-    max-height: 600px;
-    overflow-y: auto;
-}
-
-/* Personalizar btn-danger de Bootstrap para que coincida con el tono de UTA */
-.btn-danger {
-    background-color: rgb(141,14,14) !important;
-    border-color: rgb(141,14,14) !important;
-    color: white !important;
-}
-
-.btn-danger:hover {
-    background-color: rgb(110,0,0) !important;
-    border-color: rgb(110,0,0) !important;
-    color: white !important;
-}
-
-.bg-danger {
-    background-color: rgb(141,14,14) !important;
-}
-
-.table-danger {
-    background-color: rgb(141,14,14) !important;
-}
-
-.table-danger > tr > th,
-.table > :not(caption) > tr > th {
-    background-color: rgb(141,14,14) !important;
-    color: white !important;
+    .factura-fija{
+        position:relative;
+        top:0;
+        margin-top:20px;
+    }
 }
