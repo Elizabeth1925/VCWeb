@@ -6,6 +6,7 @@ class ProductoController{
     }
    public static function guardar(){
 
+   
     if(
         isset($_POST["nombre"])
         && !isset($_POST["editarProducto"])
