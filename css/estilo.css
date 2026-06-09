@@ -1,339 +1,563 @@
 /* =========================
-   CONFIGURACIÓN GENERAL
+   PALETA CORPORATIVA UTA
 ========================= */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root {
+    --rojo:          #8D0E0E;
+    --rojo-hover:    #8D0E0E;
+    --rojo-claro:    #F5DADA;
+    --verde:         #2D6A4F;
+    --verde-hover:   #1B4332;
+    --verde-claro:   #D8F0E6;
+    --dorado:        #B07D2E;
+    --dorado-claro:  #F5ECD6;
+    --crema:         #F8F4EF;
+    --crema-oscura:  #EDE7DC;
+    --texto:         #2C1810;
+    --texto-suave:   #6B4C3B;
 }
 
-body{
-    background:#ffffff;
-    font-family:Georgia, serif;
-    color:#333;
-    line-height:1.5;
+/* =========================
+   RESET GENERAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--crema);
+    font-family: Georgia, serif;
+    color: var(--texto);
+    line-height: 1.5;
 }
 
 /* =========================
    HEADER
 ========================= */
-header img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-    display:block;
-    box-shadow:0 3px 10px rgba(0,0,0,.15);
+header img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .15);
 }
 
 /* =========================
    MENÚ
 ========================= */
-nav{
-    background:rgb(141,14,14);
-    box-shadow:0 2px 8px rgba(0,0,0,.15);
+nav {
+    background: var(--rojo-hover);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+    border-bottom: 3px solid var(--dorado);
 }
 
-nav ul{
-    list-style:none;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-nav ul li a{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    width:180px;
-    height:50px;
-
-    color:white !important;
-    text-decoration:none !important;
-
-    font-weight:600;
-    font-size:17px;
-
-    transition:.3s;
+nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 50px;
+    color: rgba(255, 255, 255, .90) !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 17px;
+    transition: .3s;
 }
 
-nav ul li a:hover{
-    background:rgb(110,0,0);
+nav ul li a:hover {
+    background: var(--rojo);
+    color: white !important;
+}
+
+nav ul li a.active {
+    background: var(--dorado);
+    color: white !important;
 }
 
 /* =========================
    CONTENIDO
 ========================= */
-article{
-    padding:25px;
-    min-height:600px;
+article {
+    padding: 25px;
+    min-height: 600px;
 }
 
 /* =========================
    TITULOS
 ========================= */
-h2{
-    text-align:center;
-    font-weight:700;
-    margin-bottom:25px;
-    color:#222;
+h2 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--rojo);
 }
 
-h3{
-    color:#444;
-    margin-bottom:15px;
+h3 {
+    color: #444;
+    margin-bottom: 15px;
 }
 
 /* =========================
    TARJETAS
 ========================= */
-.card{
-    border:none !important;
-    border-radius:12px;
-    overflow:hidden;
-    background:#fff;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-    transition:.3s;
+.card {
+    background: white;
+    border: 1.5px solid var(--crema-oscura) !important;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(141, 14, 14, .08);
+    transition: .3s;
 }
 
-.card:hover{
-    transform:translateY(-3px);
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 28px rgba(141, 14, 14, .16);
+    border-color: var(--rojo-claro) !important;
 }
 
-.card-header{
-    font-weight:bold;
-    font-size:18px;
+/* =========================
+   CARD HEADER (admin, login, factura)
+========================= */
+.card-header {
+    background: var(--rojo-hover) !important;
+    color: white !important;
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 2px solid var(--dorado) !important;
 }
 
 /* =========================
    PRODUCTOS CLIENTE
 ========================= */
-.card-img-top{
-    height:220px;
-    object-fit:cover;
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    background: var(--crema);
+    padding: 15px;
+    border-bottom: 1px solid var(--crema-oscura);
 }
 
-.card-title{
-    font-size:18px;
-    font-weight:700;
+.card.h-100 {
+    border-radius: 15px;
+    overflow: hidden;
 }
 
-.card-text{
-    min-height:60px;
-    color:#666;
+.card.h-100 .card-body {
+    display: flex;
+    flex-direction: column;
 }
 
-.text-success{
-    font-weight:bold;
+.card.h-100 .btn {
+    margin-top: auto;
+}
+
+.card.h-100:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(141, 14, 14, .15);
+}
+
+.card-title {
+    color: var(--rojo);
+    font-weight: 700;
+}
+
+.card-text {
+    min-height: 60px;
+    color: var(--texto-suave);
+}
+
+.text-success {
+    color: var(--verde) !important;
+    font-weight: bold;
+}
+
+.card-producto {
+    height: 100%;
+}
+
+.card-producto .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-producto .btn {
+    margin-top: auto;
 }
 
 /* =========================
    FACTURA
 ========================= */
-.factura-fija{
-    position:sticky;
-    top:15px;
-    z-index:100;
+.factura-fija {
+    position: sticky;
+    top: 15px;
+    z-index: 100;
 }
 
-.factura-fija .card-body{
-    max-height:650px;
-    overflow-y:auto;
+.factura-fija .card-header {
+    background: var(--rojo) !important;
+    color: white !important;
+    border-bottom: 2px solid var(--dorado) !important;
 }
 
-.factura-fija table{
-    font-size:14px;
+.factura-fija .card-body {
+    max-height: 650px;
+    overflow-y: auto;
 }
 
-.factura-fija::-webkit-scrollbar{
-    width:6px;
+.factura-fija table {
+    font-size: 14px;
 }
 
-.factura-fija::-webkit-scrollbar-thumb{
-    background:#ccc;
-    border-radius:10px;
+.factura-fija::-webkit-scrollbar {
+    width: 6px;
 }
 
-.total-factura{
-    background:#198754;
-    color:white;
-    font-size:20px;
-    font-weight:bold;
+.factura-fija::-webkit-scrollbar-thumb {
+    background: var(--crema-oscura);
+    border-radius: 10px;
+}
+
+.total-factura {
+    background: var(--verde);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /* =========================
    TABLAS
 ========================= */
-.table{
-    margin-bottom:0;
+.table {
+    margin-bottom: 0;
 }
 
-.table thead th{
-    background:rgb(141,14,14) !important;
-    color:white !important;
-    border:none;
+.table thead th {
+    background: var(--rojo) !important;
+    color: white !important;
+    border: none;
 }
 
-.table-hover tbody tr:hover{
-    background:#f8f9fa;
+.table-hover tbody tr:hover {
+    background: var(--rojo-claro);
 }
 
-.table td{
-    vertical-align:middle;
+.table td {
+    vertical-align: middle;
 }
 
 /* =========================
    CRUD ADMIN
 ========================= */
-.producto-admin-img{
-    width:80px;
-    height:80px;
-    object-fit:cover;
-    border-radius:8px;
-    transition:.3s;
+.producto-admin-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: .3s;
 }
 
-.producto-admin-img:hover{
-    transform:scale(1.2);
+.producto-admin-img:hover {
+    transform: scale(1.2);
 }
 
-.badge{
-    font-size:15px;
-    padding:8px 12px;
+/* =========================
+   BADGES
+========================= */
+.badge {
+    font-size: 15px;
+    padding: 8px 12px;
+}
+
+/* Badge precio → dorado */
+.badge.bg-success,
+.badge.bg-primary,
+.badge.bg-secondary {
+    background: var(--dorado) !important;
+    color: white !important;
+}
+
+/* Badge estado activo → verde base */
+.badge.bg-success.estado,
+td .badge.bg-success {
+    background: var(--verde) !important;
+    color: white !important;
 }
 
 /* =========================
    BOTONES
 ========================= */
-.btn{
-    border-radius:8px;
-    font-weight:600;
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
 }
 
-.btn-success{
-    background:#198754;
+/* Verde — Agregar, Activo */
+.btn-success {
+    background: var(--verde) !important;
+    border-color: var(--verde) !important;
+    color: white !important;
 }
 
-.btn-primary{
-    background:#0d6efd;
+.btn-success:hover {
+    background: var(--verde-hover) !important;
+    border-color: var(--verde-hover) !important;
 }
 
-.btn-warning{
-    color:black;
+/* Dorado — Editar, primario */
+.btn-primary,
+
+.btn-warning {
+    background: var(--dorado) !important;
+    border-color: var(--dorado) !important;
+    color: white !important;
+    font-weight: 700;
 }
 
-.btn-danger{
-    background:rgb(141,14,14) !important;
-    border-color:rgb(141,14,14) !important;
+.btn-warning:hover {
+    background: #8f6220 !important;
+    border-color: #8f6220 !important;
+    color: white !important;
 }
 
-.btn-danger:hover{
-    background:rgb(110,0,0) !important;
-    border-color:rgb(110,0,0) !important;
+#btn-vaciar {
+    background: var(--crema) !important;
+    border: 2px solid var(--dorado) !important;
+    color: var(--texto-suave) !important;
+}
+
+#btn-vaciar:hover {
+    background: var(--dorado) !important;
+    color: white !important;
+}
+
+.btn-primary:hover,
+.btn-warning:hover {
+    background: #8f6220 !important;
+    border-color: #8f6220 !important;
+    color: white !important;
+}
+
+/* Rojo — Desactivar, Eliminar */
+.btn-danger {
+    background: var(--rojo) !important;
+    border-color: var(--rojo) !important;
+    color: white !important;
+}
+
+.btn-danger:hover {
+    background: var(--rojo-hover) !important;
+    border-color: var(--rojo-hover) !important;
+}
+
+/* Botón outline (+ Nuevo Producto) */
+.btn-outline-light {
+    border-color: var(--dorado) !important;
+    color: var(--dorado) !important;
+    background: transparent !important;
+}
+
+.btn-outline-light:hover {
+    background: var(--dorado) !important;
+    color: white !important;
 }
 
 /* =========================
    FORMULARIOS
 ========================= */
-.form-control{
-    border-radius:8px;
+.form-control {
+    border-radius: 8px;
+    border-color: var(--crema-oscura);
 }
 
-.form-control:focus{
-    box-shadow:0 0 0 .15rem rgba(141,14,14,.25);
-    border-color:rgb(141,14,14);
+.form-control:focus {
+    box-shadow: 0 0 0 .15rem rgba(141, 14, 14, .20);
+    border-color: var(--rojo);
 }
 
 /* =========================
    ALERTAS
 ========================= */
-.alert{
-    border:none;
-    border-radius:10px;
-    font-weight:600;
+.alert {
+    border: none;
+    border-left: 4px solid;
+    border-radius: 10px;
+    font-weight: 600;
 }
 
-/*==========================
-  Contactanos
-===========================*/
-.card img{
-    object-fit:cover;
-    border:4px solid rgb(141,14,14);
+.alert-success {
+    background: var(--dorado-claro) !important;
+    color: var(--dorado) !important;
+    border-left-color: var(--dorado) !important;
 }
 
-.card:hover{
-    transform:translateY(-5px);
-    transition:.3s;
+.alert-success .btn-close {
+    filter: brightness(0) saturate(100%) invert(52%) sepia(60%) saturate(400%) hue-rotate(5deg);
 }
 
-.card h5{
-    font-weight:bold;
-    color:rgb(141,14,14);
+.alert-danger {
+    background: var(--rojo-claro) !important;
+    color: var(--rojo-hover) !important;
+    border-left-color: var(--rojo) !important;
+}
+
+.alert-danger .btn-close {
+    filter: brightness(0) saturate(100%) invert(15%) sepia(80%) saturate(600%) hue-rotate(340deg);
+}
+
+.alert-warning {
+    background: var(--dorado-claro) !important;
+    color: var(--dorado) !important;
+    border-left-color: var(--dorado) !important;
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal-header {
+    background: var(--verde) !important;
+    color: white !important;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 2px solid var(--dorado) !important;
+}
+
+.modal-title {
+    color: white !important;
+    font-weight: 700;
+}
+
+.modal-header .btn-close {
+    filter: brightness(0) invert(1);
+}
+
+.modal-content {
+    border-radius: 14px;
+    border: none;
+    box-shadow: 0 8px 30px rgba(141, 14, 14, .18);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--crema-oscura);
+    background: var(--crema);
+    border-radius: 0 0 14px 14px;
+}
+
+/* =========================
+   CONTACTANOS
+========================= */
+.card img {
+    object-fit: cover;
+}
+
+.card h5 {
+    font-weight: bold;
+    color: var(--rojo);
 }
 
 /* =========================
    FOOTER
 ========================= */
-footer{
-    background:rgb(141,14,14);
-    color:white;
-    text-align:center;
-    padding:20px;
-    margin-top:30px;
-    font-size:15px;
+footer {
+    background: var(--rojo-hover);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 15px;
+    border-top: 3px solid var(--dorado);
 }
 
 /* =========================
    IMPRESIÓN DE FACTURA
 ========================= */
-@media print{
-
-    body *{
-        visibility:hidden;
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        background: white;
     }
 
-    #facturaImprimir,
-    #facturaImprimir *{
-        visibility:visible;
-    }
-
-    #facturaImprimir{
-        position:absolute;
-        left:0;
-        top:0;
-        width:100%;
-        background:white;
-    }
-
-    .btn,
+    header,
     nav,
     footer,
-    header{
-        display:none !important;
+    .col-md-8,
+    .btn,
+    form,
+    .d-flex,
+    h2,
+    hr {
+        display: none !important;
     }
 
-    .col-accion,
-    .btn{
-        display:none !important;
+    article {
+        padding: 0;
+        margin: 0;
+    }
+
+    .container-fluid,
+    .row,
+    .col-md-4 {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    #facturaImprimir {
+        position: static !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 20px !important;
+        box-shadow: none !important;
+    }
+
+    .col-accion {
+        display: none !important;
+    }
+
+    .modal,
+    .modal-backdrop {
+        display: none !important;
     }
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
-@media(max-width:768px){
-
-    nav ul{
-        flex-direction:column;
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
     }
 
-    nav ul li a{
-        width:100%;
+    nav ul li a {
+        width: 100%;
     }
 
-    .factura-fija{
-        position:relative;
-        top:0;
-        margin-top:20px;
+    .factura-fija {
+        position: relative;
+        top: 0;
+        margin-top: 20px;
     }
+}
+
+.bg-dark.card-header,
+.card-header.bg-dark {
+    background: var(--dorado) !important;
+    border-top: 3px solid var(--dorado) !important;
+    border-bottom: 3px solid var(--dorado) !important;
+    color: white !important;
+}
+
+.badge.bg-success {
+    background-color: var(--dorado-claro) !important;
+    border: 2px solid var(--dorado) !important;
+    color: var(--dorado) !important;
+    font-weight: 700;
 }
